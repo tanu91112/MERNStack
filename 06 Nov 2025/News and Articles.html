@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News and Articles</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        /* Top navigation */
+        .header-bar {
+            background: #333;
+            padding: 14px;
+        }
+
+        .header-bar nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header-bar nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .header-bar nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Page title */
+        .title {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 32px;
+        }
+
+        /* Content boxes */
+        .container {
+            width: 70%;
+            margin: 30px auto;
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 18px;
+        }
+
+        .item h3 {
+            margin: 0 0 6px 0;
+        }
+
+        .read-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .read-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            margin-top: 40px;
+        }
+    </style>
+
+</head>
+<h1 class="title">Welcome to News & Articles</h1>
+<body>
+
+    <header class="header-bar">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Articles</a>
+            <a href="#">News</a>
+        </nav>
+    </header>
+
+    
+    <div class="container">
+
+        <!-- Latest Articles -->
+        <div class="card">
+            <h2>Latest Articles</h2>
+
+            <div class="item">
+                <h3>Understanding the Basics of HTML</h3>
+                <p>This article covers the fundamental concepts of HTML, including elements, attributes, and structure.</p>
+                <a class="read-link" href="#">Read more</a>
+            </div>
+
+            <div class="item">
+                <h3>CSS for Beginners</h3>
+                <p>Learn how to style your web pages using CSS, including selectors, properties, and values.</p>
+                <a class="read-link" href="#">Read more</a>
+            </div>
+        </div>
+
+        <!-- Latest News -->
+        <div class="card">
+            <h2>Latest News</h2>
+
+            <div class="item">
+                <h3>Web Development Trends in 2025</h3>
+                <p>Discover the latest trends in web development, including frameworks, tools, and best practices.</p>
+                <a class="read-link" href="#">Read more</a>
+            </div>
+
+            <div class="item">
+                <h3>JavaScript Updates</h3>
+                <p>Stay updated with the latest features and improvements in JavaScript.</p>
+                <a class="read-link" href="#">Read more</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2025 News & Articles by Tanu. All rights reserved.
+    </footer>
+
+</body>
+</html>
