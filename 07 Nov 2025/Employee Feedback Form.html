@@ -1,142 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Employee Feedback Form</title>
-  <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f6fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-
-    h1 {
-      text-align: center;
-      color: #222;
-      margin-bottom: 20px;
-    }
-
-    .form-container {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      width: 400px;
-      max-width: 90%;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: 600;
-      color: #444;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: border-color 0.2s ease;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #007bff;
-      outline: none;
-    }
-
-    textarea {
-      resize: vertical; /* ✅ allows up-down resizing */
-      min-height: 80px;
-      max-height: 250px;
-    }
-
-    button {
-      width: 100%;
-      background: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background: #0056b3;
-    }
-
-    .success-message {
-      display: none;
-      text-align: center;
-      color: green;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Employee Feedback Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+        }
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            padding: 30px 32px 26px 32px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: bold;
+            margin-bottom: 28px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 18px;
+            display: block;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1rem;
+            resize: none;
+        }
+        textarea {
+            min-height: 70px;
+        }
+        button[type="submit"] {
+            background-color: #0792ea;
+            color: white;
+            padding: 11px 42px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.08rem;
+            cursor: pointer;
+            display: block;
+            margin: 0 auto;
+        }
+        button[type="submit"]:hover {
+            background-color: #0474bc;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Employee Feedback Form</h1>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="jayanth">
 
-  <!-- ✅ Heading moved outside the form box -->
-  <h1>Employee Feedback Form</h1>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="jayanth@faceprep.in">
 
-  <div class="form-container">
-    <form id="feedbackForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" required />
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" value="Training">
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" required />
+            <label for="role">Role/Position:</label>
+            <input type="text" id="role" name="role" value="Training Manager">
 
-      <label for="department">Department:</label>
-      <input type="text" id="department" required />
+            <label for="experience">Overall Experience:</label>
+            <select id="experience" name="experience">
+                <option value="Excellent" selected>Excellent</option>
+                <option value="Good">Good</option>
+                <option value="Average">Average</option>
+                <option value="Needs Improvement">Needs Improvement</option>
+            </select>
 
-      <label for="role">Role/Position:</label>
-      <input type="text" id="role" required />
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback">He is a certified trainer in aws/ms azure</textarea>
 
-      <label for="experience">Overall Experience:</label>
-      <select id="experience" required>
-        <option value="">Select</option>
-        <option>Excellent</option>
-        <option>Good</option>
-        <option>Average</option>
-        <option>Poor</option>
-      </select>
-
-      <label for="feedback">Feedback:</label>
-      <textarea id="feedback" required></textarea>
-
-      <button type="submit">Submit</button>
-      <div class="success-message" id="successMsg">✅ Feedback submitted successfully!</div>
-    </form>
-  </div>
-
-  <script>
-    const form = document.getElementById('feedbackForm');
-    const successMsg = document.getElementById('successMsg');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      successMsg.style.display = 'block';
-      form.reset();
-      setTimeout(() => {
-        successMsg.style.display = 'none';
-      }, 3000);
-    });
-  </script>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
