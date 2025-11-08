@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Attendance Table</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: repeating-linear-gradient(45deg, #faf3e9, #faf3e9 25px, #fff8f1 25px, #fff8f1 50px);
+      margin: 0;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Headings */
+    h2 {
+      color: #b22222;
+      text-shadow: 1px 1px #ffffff;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      color: #8b0000;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 85%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: #fffaf8;
+      border: 5px solid red;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th,
+    td {
+      border: 2px solid red;
+      /* ✅ Inner red borders for all cells */
+      padding: 12px 15px;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    /* Header row */
+    th {
+      background-color: #ffeaea;
+      color: #b22222;
+      font-weight: bold;
+      border-bottom: 3px solid red;
+    }
+
+    /* Row hover */
+    tr:hover {
+      background-color: #fff2f2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Employee Attendance Table</h2>
+  <h3>Attendance Records</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Attendance Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>12345</td>
+        <td>example1</td>
+        <td>IT</td>
+        <td>Present</td>
+      </tr>
+      <tr>
+        <td>67890</td>
+        <td>example2</td>
+        <td>HR</td>
+        <td>Absent</td>
+      </tr>
+      <tr>
+        <td>54321</td>
+        <td>example3</td>
+        <td>Finance</td>
+        <td>Present</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+
+</html>
