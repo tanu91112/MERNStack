@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+  display: flex;
+  height: 250px;
+  flex-wrap: wrap;
+  overflow: auto;
+  background-color: DodgerBlue;
+  margin-bottom: 20px;
+}
+
+.container div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;  
+  font-size: 30px;
+}
+</style>
+</head>
+<body>
+
+<h2>align-content: center</h2>
+<div class="container" style="align-content: center;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>align-content: stretch (default)</h2>
+<div class="container" style="align-content: stretch;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>align-content: flex-start</h2>
+<div class="container" style="align-content: flex-start;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>align-content: flex-end</h2>
+<div class="container" style="align-content: flex-end;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>align-content: space-around</h2>
+<div class="container" style="align-content: space-around;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>align-content: space-between</h2>
+<div class="container" style="align-content: space-between;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+<h2>align-content: space-evenly</h2>
+<div class="container" style="align-content: space-evenly;">
+  <div>1</div><div>2</div><div>3</div><div>4</div>
+  <div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+</div>
+
+</body>
+</html>
