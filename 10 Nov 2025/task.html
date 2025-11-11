@@ -1,56 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Layout</title>
+<html>
 
+<head>
+    <title>Facebook</title>
+</head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
     }
-    body{
+
+    body {
         background: #c7e3c0;
         padding: 10px;
     }
 
-    .container{
+    .container {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
-    /* Top 3 boxes */
-    .top-row{
+    .top-row {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 10px;
     }
 
-    .top-box{
+    .top-box {
         background: #d67e74;
         height: 120px;
         border: 3px solid #c7e3c0;
     }
 
-    /* Middle Section */
-    .middle{
+    .middle {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 10px;
     }
 
-    .left-box{
+    .left-box {
         background: #6d7664;
         position: relative;
-        height: 400px;
+        height: 550px;
     }
 
-    .yellow-square{
-        width: 80px;
-        height: 80px;
+    .yellow-square {
+        width: 200px;
+        height: 200px;
         background: #f4e04d;
         position: absolute;
         top: 50%;
@@ -58,48 +55,46 @@
         transform: translate(-50%, -50%);
     }
 
-   
-    .right-column{
+    .right-column {
         display: flex;
         flex-direction: column;
         gap: 10px;
     }
 
-    .right-box{
+    .right-box {
         background: #88965f;
         flex: 1;
     }
-
 </style>
-</head>
 
 <body>
+    <div class="container">
 
-<div class="container">
+        <div class="top-row">
+            <div class="top-box"></div>
+            <div class="top-box"></div>
+            <div class="top-box"></div>
 
-    <div class="top-row">
-        <div class="top-box"></div>
-        <div class="top-box"></div>
-        <div class="top-box"></div>
-    </div>
-
-    <div class="middle">
-
-        <div class="left-box">
-            <div class="yellow-square"></div>
         </div>
 
-        <div class="right-column">
-            <div class="right-box"></div>
-            <div class="right-box"></div>
-            <div class="right-box"></div>
-            <div class="right-box"></div>
+        <div class="middle">
+
+            <div class="left-box">
+                <div class="yellow-square"></div>
+            </div>
+
+            <div class="right-column">
+                <div class="right-box"></div>
+                <div class="right-box"></div>
+                <div class="right-box"></div>
+                <div class="right-box"></div>
+            </div>
+
         </div>
 
     </div>
 
-</div>
 
 </body>
-</html>
 
+</html>
