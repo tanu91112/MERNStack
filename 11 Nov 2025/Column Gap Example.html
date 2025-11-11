@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <title>Column Gap Example</title>
+<head>
+<style>
+.container {
+  display: grid;
+  column-gap: 50px;
+  row-gap: 50px;
+
+  grid-template-columns: 90px auto auto;
+  background-color: dodgerblue;
+  padding: 10px;
+}
+
+.container div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<h1>The column-gap Property</h1>
+
+<p>Use the <em>column-gap</em> property to adjust the space between the grid columns:</p>
+
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>  
+  <div>4</div>
+  <div>5</div>
+</div>
+
+</body>
+</html>
