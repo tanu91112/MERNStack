@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techycorp Solutions</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+
+      background: #fff;
+      color: #333;
+    }
+
+    header {
+      background: #fff;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .container {
+      width: 100%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .logo span {
+      color: #0d5862;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 750;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #00bcd4;
+    }
+
+    .join-btn {
+      background: #00bcd4;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+
+      margin-left: 20px;
+      transition: background 0.8s ease;
+
+    }
+
+    .join-btn:hover {
+      background: #007bff;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-content {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 40px;
+      width: 70%;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    .hero h4 {
+      color: #00bcd4;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+
+    .hero-buttons .btn {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .hero-buttons .btn:hover {
+      background: #00bcd4;
+    }
+
+    .hero-buttons .join {
+      background: #00bcd4;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 60px 10%;
+      background: #f9f9f9;
+    }
+
+    .feature {
+      background: #fff;
+      padding: 25px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+      background: #e6f7ff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature h3 {
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .courses {
+      text-align: center;
+      padding: 60px 0;
+    }
+
+    .courses h2 {
+      color: #007bff;
+      margin-bottom: 40px;
+      font-size: 28px;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-areas:
+        "java java cloud"
+        "web data cloud";
+      gap: 15px;
+      width: 90%;
+      margin: auto;
+    }
+
+    .course-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .course-card:hover {
+      transform: scale(1.02);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 110%;
+      object-fit: cover;
+    }
+
+    .course-card h3,
+    .course-card p {
+      position: absolute;
+      left: 20px;
+      margin: 0;
+      color: #fff;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+    }
+
+    .course-card h3 {
+      bottom: 35px;
+      font-size: 18px;
+    }
+
+    .course-card p {
+      bottom: 15px;
+      color: #00bcd4;
+      font-weight: bold;
+    }
+
+    .course-card:nth-child(1) {
+      grid-area: java;
+      height: 280px;
+    }
+
+    .course-card:nth-child(2) {
+      grid-area: web;
+      height: 220px;
+    }
+
+    .course-card:nth-child(3) {
+      grid-area: data;
+      height: 220px;
+    }
+
+    .course-card:nth-child(4) {
+      grid-area: cloud;
+      height: 514px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #007bff;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    
+
+    @media(max-width: 768px) {
+      .course-container {
+        grid-template-areas:
+          "java"
+          "web"
+          "data"
+          "cloud";
+      }
+
+      .course-card {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">Techycorp <span>Solutions</span></div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Courses</a></li>
+          <li><a href="#">Pages</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#" class="join-btn">Join Now</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h4>BEST ONLINE COURSES WITH 100% PLACEMENT OPPORTUNITIES</h4>
+      <h1>The Best Online Learning Platform</h1>
+      <p>Enhance your skills, learn from industry experts, and achieve your dream career goals with us.</p>
+      <div class="hero-buttons">
+        <a href="#" class="btn">Get Free Demo</a>
+        <a href="#" class="btn join">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <h3>Skilled Instructors</h3>
+      <p>Our trainers are industry experts with a decade of hands-on experience in cutting-edge technologies. They
+        ensure practical learning and personalized mentorship.</p>
+    </div>
+    <div class="feature">
+      <h3>Our Services</h3>
+      <p>We provide custom corporate training, live project-based learning, and 1:1 mentoring designed for real-world
+        skill building and immediate job readiness.</p>
+    </div>
+    <div class="feature">
+      <h3>Why Choose Us</h3>
+      <p>Trusted by 5000+ learners, we ensure guaranteed placement support, continuous assessments, and lifelong career
+        assistance post-training.</p>
+    </div>
+    <div class="feature">
+      <h3>Scholarship Facility</h3>
+      <p>We offer merit-based scholarships for deserving students to help them access high-quality learning without
+        financial barriers.</p>
+    </div>
+  </section>
+
+  <section class="courses">
+    <h2>Our Popular Courses</h2>
+    <div class="course-container">
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=60" alt="">
+        <h3>Java Full Stack</h3>
+        <p>360 Hrs</p>
+      </div>
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=60" alt="">
+        <h3>Web Development & Design</h3>
+        <p>320 Hrs</p>
+      </div>
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=600&q=60" alt="">
+        <h3>Data Analytics</h3>
+        <p>380 Hrs</p>
+      </div>
+      <div class="course-card">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=600&q=60" alt="">
+        <h3>Cloud Solution Architect</h3>
+        <p>260 Hrs</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>@2025 Techycorp Solutions.All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
