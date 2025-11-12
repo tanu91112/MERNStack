@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Examples</title>
+</head>
+<body>
+  <h1>My First JavaScript</h1>
+
+  <!-- Date and Time Example -->
+  <button type="button" onclick="displayDateTime()">Click me to display Date and Time</button>
+  <center><h2 id="dateTime"></h2></center>
+
+  <hr>
+
+  <!-- InnerText Example -->
+  <h2>My Web Page</h2>
+  <p id="greet"></p>
+
+  <script>
+    document.getElementById("greet").innerText = "Hello World!";
+  </script>
+
+  <hr>
+
+  <!-- document.write Example -->
+  <h2>Using document.write()</h2>
+  <p>Note: Never call document.write() after the document has finished loading — it overwrites the page.</p>
+  <script>
+    document.write("5 + 6 = " + (5 + 6) + "<br>");
+  </script>
+
+  <button type="button" onclick="document.write('Sum = ' + (5 + 6))">Try it</button>
+
+  <hr>
+
+  <!-- Alert Example -->
+  <h2>Using window.alert()</h2>
+  <script>
+    window.alert("5 + 6 = " + (5 + 6));
+  </script>
+
+  <hr>
+
+  <!-- Console Example -->
+  <h2>Using console.log()</h2>
+  <p>Press <b>F12</b> → Select <b>Console</b> → See the output.</p>
+  <script>
+    console.log("5 + 6 = " + (5 + 6));
+  </script>
+
+  <hr>
+
+  <!-- Print Example -->
+  <h2>Using window.print()</h2>
+  <p>Click the button to print this page.</p>
+  <button onclick="window.print()">Print this page</button>
+
+  <!-- JavaScript Function for Date and Time -->
+  <script>
+    function displayDateTime() {
+      document.getElementById('dateTime').innerHTML = new Date();
+    }
+  </script>
+</body>
+</html>
