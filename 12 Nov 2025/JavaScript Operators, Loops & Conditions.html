@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>  JavaScript Fundamentals</title>
+</head>
+<body>
+  
+<h1> JavaScript Operators,Loops & Conditions</h1>
+
+<!--OPERATORS -->
+  
+<h2>1️.  Operators</h2>
+
+<p id="arithmetic"></p>
+<p id="assignment"></p>
+<p id="comparison"></p>
+<p id="logical"></p>
+<p id="bitwise"></p>
+<p id="string"></p>
+<p id="type"></p>
+<p id="ternary"></p>
+
+<script>
+let x = 8, y = 9;
+
+// Arithmetic
+let arithmeticResult =
+  `Add: ${x + y}, Subtract: ${x - y}, Multiply: ${x * y}, Divide: ${(x / y).toFixed(2)}, Modulus: ${x % y}, Power: ${x ** y}`;
+document.getElementById("arithmetic").innerText = "Arithmetic Operators → " + arithmeticResult;
+
+// Assignment
+let z = 19;
+z += 5; z -= 2; z *= 3; z /= 2; z %= 4; z **= 2;
+document.getElementById("assignment").innerText = "Assignment Operators → final value of z = " + z;
+
+// Comparison
+let comparisonResult = `x==y: ${x==y}, x===y: ${x===y}, x!=y: ${x!=y}, x!==y: ${x!==y}, x>y: ${x>y}, x<=y: ${x<=y}`;
+document.getElementById("comparison").innerText = "Comparison Operators → " + comparisonResult;
+
+// Logical
+let logicalResult = `(x>5 && y<5): ${(x>5 && y<5)}, (x>10 || y<5): ${(x>10 || y<5)}, !(x>5): ${!(x>5)}`;
+document.getElementById("logical").innerText = "Logical Operators → " + logicalResult;
+
+// Bitwise
+  
+let bitwiseResult = `x & y: ${x & y}, x | y: ${x | y}, x ^ y: ${x ^ y}, ~x: ${~x}, x << 1: ${x << 1}, x >> 1: ${x >> 1}`;
+document.getElementById("bitwise").innerText = "Bitwise Operators → " + bitwiseResult;
+
+// String
+  
+let first = "Hello", second = "World";
+let stringResult = first + " " + second;
+document.getElementById("string").innerText = "String Operator (+) → " + stringResult;
+
+// Type
+let typeResult = `typeof x: ${typeof x}, typeof first: ${typeof first}, (x instanceof Number): ${x instanceof Number}`;
+document.getElementById("type").innerText = "Type Operators → " + typeResult;
+
+// Ternary
+let message = (x > y) ? "x is bigger" : "y is bigger";
+document.getElementById("ternary").innerText = "Ternary Operator → " + message;
+</script>
+
+<!--  LOOPS  -->
+<h2>2️.    Loops in JavaScript</h2>
+
+<h3>For Loop</h3>
+<p id="forLoopOutput"></p>
+
+<h3>While Loop</h3>
+<p id="whileLoopOutput"></p>
+
+<h3>Do-While Loop</h3>
+<p id="doWhileLoopOutput"></p>
+
+<script>
+  
+// For loop
+
+let forOut = "";
+for (let i = 1; i <= 5; i++) { forOut += i + " "; }
+document.getElementById("forLoopOutput").textContent = forOut;
+
+// While loop
+
+let whileOut = "", j = 1;
+while (j <= 5) { whileOut += j + " "; j++; }
+document.getElementById("whileLoopOutput").textContent = whileOut;
+
+// Do-while loop
+
+let doOut = "", k = 1;
+do { doOut += k + " "; k++; } while (k <= 5);
+document.getElementById("doWhileLoopOutput").textContent = doOut;
+</script>
+
+<!--  CONDITIONALS  -->
+
+<h2>3️. Conditional Statements</h2>
+<div id="conditionOutput"></div>
+
+<script>
+let output = "";
+
+// if
+
+let num = 10;
+if (num > 5) output += "<p>if: Number is greater than 5.</p>";
+
+// if-else
+
+let temp = 30;
+if (temp > 40) output += "<p>if-else: It is very hot.</p>";
+else output += "<p>if-else: It is not that hot.</p>";
+
+// if-else if-else
+
+let score = 75;
+if (score >= 90) output += "<p>if-else if-else: Grade A</p>";
+else if (score >= 70) output += "<p>if-else if-else: Grade B</p>";
+else if (score >= 50) output += "<p>if-else if-else: Grade C</p>";
+else output += "<p>if-else if-else: Grade F</p>";
+
+// switch
+
+let day = 3;
+switch (day) {
+  case 1: output += "<p>switch: Monday</p>"; break;
+  case 2: output += "<p>switch: Tuesday</p>"; break;
+  case 3: output += "<p>switch: Wednesday</p>"; break;
+  default: output += "<p>switch: Another day</p>";
+}
+
+// ternary
+
+let age = 18;
+output += `<p>ternary: ${age >= 18 ? "Adult": "Minor"}</p>`;
+
+document.getElementById("conditionOutput").innerHTML = output;
+</script>
+
+</body>
+</html>
