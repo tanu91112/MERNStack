@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Fundamentals</title>
+</head>
+
+<body>
+
+  <h2>Arithmetic Operations </h2>
+  <p>we will have to click on the button to perform  operation:</p>
+
+  <button onclick="add()">Addition</button>
+  <button onclick="subtract()">Subtraction</button>
+  <button onclick="multiply()">Multiplication</button>
+  <button onclick="divide()">Division</button>
+
+  <h3 id="result"></h3>
+
+  <script>
+    let a = 10;
+    let b = 10;
+
+    function add() {
+      document.getElementById("result").innerHTML= "Addition: " + (a + b);
+    }
+    function subtract() {
+      document.getElementById("result").innerHTML= "Subtraction: " + (a - b);
+    }
+    function multiply() {
+      document.getElementById("result").innerHTML= "Multiplication: " + (a * b);
+    }
+    function divide() {
+      document.getElementById("result").innerHTML= "Division: " + (a / b);
+    }
+
+  </script>
+ 
+ 
+</body>
+</html>
