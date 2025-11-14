@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>CSS Box Model Demonstration</h1>
+
+    <div class="box-model-container">
+        <div class="box-model-example">
+            <div class="content">Content</div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="margin">Margin:</label>
+            <input type="range" id="margin" min="0" max="500" value="200">
+            <span id="margin-value">20px</span>
+        </div>
+        <div class="control-group">
+            <label for="margin-left">Margin Left:</label>
+            <input type="range" id="margin-left" min="0" max="500" value="200">
+            <span id="margin-left-value">20px</span>
+        </div>
+        <div class="control-group">
+            <label for="margin-right">Margin Right:</label>
+            <input type="range" id="margin-right" min="0" max="500" value="200">
+            <span id="margin-right-value">20px</span>
+        </div>
+
+        <div class="control-group">
+            <label for="border">Border:</label>
+            <input type="range" id="border" min="0" max="1000" value="1000">
+            <span id="border-value">100px</span>
+        </div>
+
+        <div class="control-group">
+            <label for="padding">Padding:</label>
+            <input type="range" id="padding" min="0" max="500" value="300">
+            <span id="padding-value">30px</span>
+        </div>
+    </div>
+
+    <div class="box-model-explanation">
+        <h2>Box Model Components</h2>
+        <div class="component">
+            <div class="color-box margin"></div>
+            <p><strong>Margin</strong> - Space outside the border (transparent)</p>
+        </div>
+        <div class="component">
+            <div class="color-box border"></div>
+            <p><strong>Border</strong> - Surrounds the padding and content</p>
+        </div>
+        <div class="component">
+            <div class="color-box padding"></div>
+            <p><strong>Padding</strong> - Space between border and content</p>
+        </div>
+        <div class="component">
+            <div class="color-box content"></div>
+            <p><strong>Content</strong> - Actual content of the box</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
