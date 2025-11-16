@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="calc">
+        <h2 class="title">Calculator</h2>
+
+        <div class="display">
+            <div class="expr" id="expr"></div>
+            <div class="result" id="res">0</div>
+        </div>
+
+        <div class="keys">
+            <button data-action="clear">C</button>
+            <button data-action="back">⌫</button>
+            <button data-value="/">/</button>
+            <button data-value="*">*</button>
+
+            <button data-value="7">7</button>
+            <button data-value="8">8</button>
+            <button data-value="9">9</button>
+            <button data-value="-">-</button>
+
+            <button data-value="4">4</button>
+            <button data-value="5">5</button>
+            <button data-value="6">6</button>
+            <button data-value="+">+</button>
+
+            <button data-value="1">1</button>
+            <button data-value="2">2</button>
+            <button data-value="3">3</button>
+            <button class="eq" data-action="equals">=</button>
+
+            <button data-value="0">0</button>
+            <button data-value=".">.</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
