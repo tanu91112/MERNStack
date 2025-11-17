@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rock Paper Scissor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="title">Rock Paper Scissor</h1>
+
+<div class="game-container">
+
+    <div class=" card user-card">
+        <h2>User</h2>
+        <div class="options">
+            <button class="userChoice" data-value="rock">🪨 Rock</button>
+            <button class="userChoice" data-value="paper">📄 Paper</button>
+            <button class="userChoice" data-value="scissor">✂️ Scissor</button>
+        </div>
+        <button id="playBtn" class="play">Play</button>
+    </div>
+
+    <div class=" card comp-card">
+        <h2>Computer</h2>
+        <div class="options">
+            <div class="compChoice" data-value="rock">🪨 Rock</div>
+            <div class="compChoice" data-value="paper">📄 Paper</div>
+            <div class="compChoice" data-value="scissor">✂️ Scissor</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="score-box">
+    <div class="score-item"> User Score: <span id="userScore">0</span></div>
+    <div class="score-item"> Computer Score: <span id="compScore">0</span></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
