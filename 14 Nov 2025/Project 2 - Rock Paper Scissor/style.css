@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: linear-gradient(#652cab);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    gap: 30px;
+}
+
+.title {
+    margin-top: 30px;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.game-container {
+    display: flex;
+    gap: 50px;
+}
+
+.card {
+    width: 300px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.userChoice, .compChoice {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    transition: 0.3s;
+}
+
+.userChoice:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+}
+
+.compChoice {
+    pointer-events: none;
+}
+
+.play {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 12px;
+    cursor: pointer;
+    border: none;
+    background: #ffcc00;
+    color: black;
+    transition: 0.3s;
+}
+
+.play:hover {
+    background: #ffdd44;
+    transform: scale(1.05);
+}
+
+.active {
+    background: #00ffea !important;
+    color: black;
+}
+
+.score-box {
+    margin-top: 20px;
+    display: flex;
+    gap: 150px;
+    font-size: 24px;
+    font-weight: bold;
+}
