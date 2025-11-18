@@ -1,0 +1,14 @@
+.grid-container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 15px;
+width: 90%; margin: 50px auto;
+}
+.grid-item {
+background-color: #AEC6CF; /* Soft Blue */ color: #333;
+padding: 20px; border-radius: 5px; min-height: 100px; text-align: center; font-size: 1.5em;
+}
+.span-item {
+background-color: #FF6961; /* Salmon Red for emphasis */ grid-column: 1 / 4;
+font-weight: bold; color: white;
+}
