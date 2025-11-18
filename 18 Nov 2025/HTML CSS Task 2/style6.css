@@ -1,0 +1,8 @@
+/* Styling for invalid fields that have been focused/changed */ 
+input:invalid:focus, input:valid {
+    border: 1px solid #ccc; /* Default border color */
+}
+
+input:invalid:focus { border-color: #FF0000;
+box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
