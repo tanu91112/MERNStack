@@ -1,0 +1,437 @@
+1. Find all products that have a price greater than ($gt) $100 but less than or equal to ($lte) $500.
+
+code : 
+
+db.products.find({
+  price: { $gt: 100, $lte: 500 }
+});
+
+output :
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c55'),
+  name: 'Winter Jacket',
+  category: 'Apparel',
+  price: 180.5,
+  stock: 2,
+  tags: [
+    'Seasonal',
+    'Warm'
+  ],
+  details: {
+    color: 'Red',
+    brand: 'FashionInc'
+  },
+  reviews: [
+    {
+      rating: 4,
+      date: 2025-10-01T00:00:00.000Z
+    }
+  ]
+}
+
+
+2. Retrieve products that are in the "Apparel" category OR ($or) have a stock quantity less than 5.
+
+
+code : 
+
+db.products.find({
+  $or: [
+    { category: "Apparel" },
+    { stock: { $lt: 5 } }
+  ]
+});
+
+output:  
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c51'),
+  name: 'Basic T-Shirt',
+  category: 'Apparel',
+  price: 25,
+  stock: 5,
+  tags: [
+    'Sale'
+  ],
+  details: {
+    color: 'Blue',
+    brand: 'FashionInc'
+  },
+  reviews: [
+    {
+      rating: 2,
+      date: 2025-09-15T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-10-25T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c53'),
+  name: 'Adventure Backpack',
+  category: 'Accessories',
+  price: 60,
+  stock: 3,
+  tags: [
+    'Travel',
+    'Outdoor',
+    'Durable'
+  ],
+  details: {
+    color: 'Green',
+    brand: 'EconomyBrand'
+  },
+  reviews: [
+    {
+      rating: 4,
+      date: 2025-08-01T00:00:00.000Z
+    }
+  ]
+}
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c55'),
+  name: 'Winter Jacket',
+  category: 'Apparel',
+  price: 180.5,
+  stock: 2,
+  tags: [
+    'Seasonal',
+    'Warm'
+  ],
+  details: {
+    color: 'Red',
+    brand: 'FashionInc'
+  },
+  reviews: [
+    {
+      rating: 4,
+      date: 2025-10-01T00:00:00.000Z
+    }
+  ]
+}
+
+
+
+3. Find documents where the details.color field does not exist ($exists: false).
+
+code : 
+
+db.products.find({
+  "details.color": { $exists: false }
+});
+
+output:  nothing
+  
+
+
+4. Find products whose tags array contains both "New" AND "Premium" (using a comma-separated list in the query document).
+
+code :  
+
+db.products.find({
+  tags: { $all: ["New", "Premium"] }
+});
+
+
+output: 
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c50'),
+  name: 'Ultimate Laptop Pro',
+  category: 'Electronics',
+  price: 1250,
+  stock: 15,
+  tags: [
+    'New',
+    'Premium',
+    'Bestseller'
+  ],
+  details: {
+    color: 'Silver',
+    brand: 'TechCo'
+  },
+  reviews: [
+    {
+      rating: 5,
+      date: 2025-10-20T00:00:00.000Z
+    },
+    {
+      rating: 4,
+      date: 2025-11-01T00:00:00.000Z
+    }
+  ]
+}
+
+
+5. Find products where at least one review has a rating less than 3 AND the review date is before 2025-10-01 (using $elemMatch).
+
+code :
+
+db.products.find({
+  reviews: {
+    $elemMatch: {
+      rating: { $lt: 3 },
+      date: { $lt: new Date("2025-10-01") }
+    }
+  }
+});
+
+output : 
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c51'),
+  name: 'Basic T-Shirt',
+  category: 'Apparel',
+  price: 25,
+  stock: 5,
+  tags: [
+    'Sale'
+  ],
+  details: {
+    color: 'Blue',
+    brand: 'FashionInc'
+  },
+  reviews: [
+    {
+      rating: 2,
+      date: 2025-09-15T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-10-25T00:00:00.000Z
+    }
+  ]
+}
+
+
+6. Find all products with a price less than $100, and sort ($sort) the results by name in descending order (Z to A).
+
+
+code : 
+
+db.products.find(
+  { price: { $lt: 100 } }
+).sort({ name: -1 });
+
+output : 
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c57'),
+  name: 'Silver Bracelet',
+  category: 'Jewelry',
+  price: 49.99,
+  stock: 10,
+  tags: [
+    'Gift',
+    'Accessory'
+  ],
+  details: {
+    color: 'Silver',
+    brand: 'ShineCo'
+  },
+  reviews: [
+    {
+      rating: 5,
+      date: 2025-11-01T00:00:00.000Z
+    }
+  ]
+}
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c56'),
+  name: 'Economy Mouse',
+  category: 'Electronics',
+  price: 19.99,
+  stock: 50,
+  tags: [
+    'Wired',
+    'Budget'
+  ],
+  details: {
+    color: 'Grey',
+    brand: 'EconomyBrand'
+  },
+  reviews: [
+    {
+      rating: 3,
+      date: 2025-09-01T00:00:00.000Z
+    },
+    {
+      rating: 3,
+      date: 2025-09-10T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c54'),
+  name: 'Classic Novel Set',
+  category: 'Books',
+  price: 45,
+  stock: 20,
+  tags: [
+    'Fiction',
+    'Collection'
+  ],
+  details: {
+    color: 'Mixed',
+    brand: 'PublisherX'
+  },
+  reviews: [
+    {
+      rating: 5,
+      date: 2025-07-01T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-07-15T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-08-01T00:00:00.000Z
+    }
+  ]
+}
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c51'),
+  name: 'Basic T-Shirt',
+  category: 'Apparel',
+  price: 25,
+  stock: 5,
+  tags: [
+    'Sale'
+  ],
+  details: {
+    color: 'Blue',
+    brand: 'FashionInc'
+  },
+  reviews: [
+    {
+      rating: 2,
+      date: 2025-09-15T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-10-25T00:00:00.000Z
+    }
+  ]
+}
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c53'),
+  name: 'Adventure Backpack',
+  category: 'Accessories',
+  price: 60,
+  stock: 3,
+  tags: [
+    'Travel',
+    'Outdoor',
+    'Durable'
+  ],
+  details: {
+    color: 'Green',
+    brand: 'EconomyBrand'
+  },
+  reviews: [
+    {
+      rating: 4,
+      date: 2025-08-01T00:00:00.000Z
+    }
+  ]
+}
+
+
+
+
+7. Retrieve the 3 cheapest products across the entire collection.
+
+code :
+
+db.products.find().sort({ price: 1 }).limit(3);
+
+output:  
+
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c56'),
+  name: 'Economy Mouse',
+  category: 'Electronics',
+  price: 19.99,
+  stock: 50,
+  tags: [
+    'Wired',
+    'Budget'
+  ],
+  details: {
+    color: 'Grey',
+    brand: 'EconomyBrand'
+  },
+  reviews: [
+    {
+      rating: 3,
+      date: 2025-09-01T00:00:00.000Z
+    },
+    {
+      rating: 3,
+      date: 2025-09-10T00:00:00.000Z
+    }
+  ]
+}
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c51'),
+  name: 'Basic T-Shirt',
+  category: 'Apparel',
+  price: 25,
+  stock: 5,
+  tags: [
+    'Sale'
+  ],
+  details: {
+    color: 'Blue',
+    brand: 'FashionInc'
+  },
+  reviews: [
+    {
+      rating: 2,
+      date: 2025-09-15T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-10-25T00:00:00.000Z
+    }
+  ]
+}
+{
+  _id: ObjectId('6559d3e51a6d47b6e9273c54'),
+  name: 'Classic Novel Set',
+  category: 'Books',
+  price: 45,
+  stock: 20,
+  tags: [
+    'Fiction',
+    'Collection'
+  ],
+  details: {
+    color: 'Mixed',
+    brand: 'PublisherX'
+  },
+  reviews: [
+    {
+      rating: 5,
+      date: 2025-07-01T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-07-15T00:00:00.000Z
+    },
+    {
+      rating: 5,
+      date: 2025-08-01T00:00:00.000Z
+    }
+  ]
+}
+
+
+
