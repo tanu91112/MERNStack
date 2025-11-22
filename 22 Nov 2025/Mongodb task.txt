@@ -1,0 +1,125 @@
+8. For the product named "Ultimate Laptop Pro," decrement ($inc) the stock quantity by 1 and set ($set) its details.brand to "TechCo Elite".
+
+code:  
+db.products.updateOne({ name: "Ultimate Laptop Pro" },
+  {
+    $inc: { stock: -1 }, $set: { "details.brand": "TechCo Elite" }
+  }
+);
+
+output: 
+
+
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+9. Add the tag "Sale" to the tags array of the product "Adventure Backpack" only if it's not already present
+
+code: 
+
+db.products.updateOne( { name: "Adventure Backpack" },{$addToSet: { tags: "Sale" }});
+
+output: 
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+10. Remove ($pull) all instances of the tag "Sale" from the tags array for ALL documents in the collection.
+
+code: 
+
+db.products.updateMany({},{ $pull: { tags: "Sale" } });
+
+output:  
+
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 8,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+
+11. Calculate the total inventory value (sum of price * stock) for each category. (Hint: use $group, $sum, and $multiply).
+
+code:
+
+db.products.aggregate([{  $group: { _id: "$category", totalInventoryValue: {
+  $sum: { $multiply: ["$price", "$stock"] }  } }}]);
+
+output : 
+
+{
+  _id: 'Accessories',
+  totalInventoryValue: 180
+}
+{
+  _id: 'Electronics',
+  totalInventoryValue: 26499.42
+}
+{
+  _id: 'Apparel',
+  totalInventoryValue: 486
+}
+{
+  _id: 'Jewelry',
+  totalInventoryValue: 499.90000000000003
+}
+{
+  _id: 'Books',
+  totalInventoryValue: 900
+}
+
+
+
+12. Count the total number of products supplied by each details.brand.
+
+code: 
+
+db.products.aggregate([
+  {
+    $group: { _id: "$details.brand", totalProducts: { $sum: 1 }
+    }
+   }
+]);
+
+output:
+
+{
+  _id: 'FashionInc',
+  totalProducts: 2
+}
+{
+  _id: 'TechCo Elite',
+  totalProducts: 1
+}
+{
+  _id: 'TechCo',
+  totalProducts: 1
+}
+{
+  _id: 'PublisherX',
+  totalProducts: 1
+}
+{
+  _id: 'ShineCo',
+  totalProducts: 1
+}
+{
+  _id: 'EconomyBrand',
+  totalProducts: 2
+}
+
+
+
+
