@@ -89,9 +89,6 @@ This is a full-stack MERN (MongoDB, Express.js, React, Node.js) e-commerce web a
 - **Validation**: express-validator
 - **Development**: Vite (frontend), Nodemon (backend)
 
-## Deployment
-
-For detailed deployment instructions, please refer to [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
 
 ## Notes
 - Payment flow uses a dummy payment module (no real payment processing)
